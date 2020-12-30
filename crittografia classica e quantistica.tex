@@ -1,0 +1,170 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{geometry}
+\geometry{a4paper,top=1.25cm,bottom=4cm,left=3cm,right=3cm}
+\graphicspath{{pics/}}
+
+%TITOLO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Title}{Crittografia classica e quantistica}
+\newcommand{\TITLE}{CRITTOGRAFIA CLASSICA E QUANTISTICA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%VERSIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\theversion}{ X.X.X }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DATA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thedate}{ G Mese Anno }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%VERIFICATORI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\verif}{Primo Verificatore, Secondo Verificatore}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%RESPONSABILE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\resp}{Unico Responsabile}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DESCRIZIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\descript}{\input{../includes/description}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{hyperref}
+\else
+\usepackage{hyperref}
+\fi
+\usepackage{color}
+\hypersetup{%
+colorlinks=true,
+linkcolor=black,
+citecolor=black,
+urlcolor=blue}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{afterpage}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+\pgfkeys{/pgf/number format/.cd,
+set decimal separator={,\!},
+1000 sep={\,},
+}
+\renewcommand{\baselinestretch}{1.05}
+
+%FANCYPAGESTYLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\Title{}}
+\fancyfoot[C]{}
+\fancyhead[R]{\includegraphics[width=0.12\textwidth]{unipd.png}}
+\fancyhead[L]{Daniele Giachetto}
+\setlength{\headheight}{60pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{1.0pt}
+\usepackage{colortbl}
+\arrayrulecolor{black}
+
+\let\footruleORIG\footrule
+\renewcommand{\footrule}{\color{black} \footruleORIG}
+\renewcommand{\footrulewidth}{1.0pt}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage{amsthm}
+\usepackage{amssymb,amsmath}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage[footnote]{acronym}
+
+
+\newcommand\blankpage{%
+    \null
+    \newpage}
+
+\parskip=5pt
+
+\begin{document}
+%PRIMA PAGINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{unipd.png}\\
+
+{\large \TITLE{} \\ a.a. 2020/2021}\\[0.5cm]
+
+\begin{tabular}{ll}
+
+\end{tabular}
+\\[1.cm]
+
+\rule{\linewidth}{0.5mm} \\[0.4cm]
+{ \huge \bfseries \TITLE{} \\[0.4cm] } %TITOLO
+
+\rule{\linewidth}{0.5mm} \\[1.cm]
+\noindent
+
+\vfill
+{\large \textit{1201145} - DANIELE GIACHETTO} %BOTTOM
+\end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents %crea indice
+\clearpage %pagina nuova
+
+\pagestyle{fancy}
+
+\section{Il passato}
+
+\section{Il presente}
+
+\section{Il futuro}
+
+
+\clearpage
+
+\section{Fonti}
+
+{\large \textbf{Bibliografia}\par}
+\begin{itemize}
+    \item Eva Filoramo, Alberto Giovannini e Claudia Pasquero \textit{Alla scoperta della crittografia quantistica}, prima edizione settembre 2006.
+\end{itemize}
+
+{\large \textbf{Sitografia}\par}
+\begin{itemize}
+    \item Wikipedia, \textit{Placeholder}, 
+    \item[] \href{https://it.wikipedia.org/wiki/Pagina\_principale}{https://it.wikipedia.org/wiki/Pagina\_principale}
+\end{itemize}
+
+\end{document}
