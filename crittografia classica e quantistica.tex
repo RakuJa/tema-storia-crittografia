@@ -72,6 +72,25 @@ set decimal separator={,\!},
 }
 \renewcommand{\baselinestretch}{1.05}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PARAGRAFI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{5} % numera i sottoparagrafi
+\setcounter{tocdepth}{5} % aggiunge all'indice i sottoparagrafi
+\newcommand{\aCapo}{ ~ \vspace{0.25cm} \\} % per andare a capo dopo paragraph e subparagraph
+\makeatletter
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}{-2ex\@plus -1ex}{0ex}{\normalfont\normalsize\bfseries}}
+\makeatother%{0.0001pt \@plus .2ex}{-3.25ex\@plus -1ex \@minus -.2ex}
+
+\makeatletter
+    \renewcommand\paragraph{%
+        \@startsection{paragraph}{4}{0mm}%
+           {-\baselineskip}%
+           {.5\baselineskip}%
+           {\normalfont\normalsize\bfseries}}
+    \makeatother
+
 %FANCYPAGESTYLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
@@ -145,21 +164,26 @@ set decimal separator={,\!},
 
 \pagestyle{fancy}
 \section{La segretezza nella comunicazione}
- 
 La crittografia è la branca della scienza che tratta i metodi per rendere un messaggio inintelligibile per chiunque non sia in possesso di determinati strumenti.\newline
 Lo scopo di questo elaborato è quello di esporre la storia e l'evoluzione di questa disciplina, partendo dai suoi primi usi documentati fino ad arrivare al suo presente, in continuo e costante sviluppo.
-
 \subsection{Il passato della crittografia}
-
 \subsubsection{La trasposizione}
-
 Uno dei primi esempi storicamente attestati di cifratura fu la scitala spartana, un bastone nel quale veniva avvolto un messaggio in chiaro e la sua trasposizione sul bastone diveniva il messaggio cifrato. Per trasposizione dunque si intende un metodo di cifrature che si basa dunque sulla traslazione, secondo un determinato schema, del messaggio originario.\newline
-Molti si dilettarono nella creazione di sistemi crittografici basati su questo concetto, uno degli esempi più noti è la \textit{scacchiera di Polibio} dalla quale il \textit{cifrario di Playfair} prese forte ispirazione.
-
+Molti si dilettarono nella creazione di sistemi crittografici basati su questo concetto, uno degli esempi più noti è la \textit{scacchiera di Polibio} pensato nel III secolo a.C. dalla quale il \textit{cifrario di Playfair} realizzato nel 1854 prese forte ispirazione.
 \subsubsection{La sostituzione}
+I cifrari a sostituzioni sono tra le tecniche crittografiche che hanno avuto più vita e successo, uno dei primi e più famosi esempi si trova verso la fine della repubblica romana con il \textit{cifrario di Cesare}, in esso ogni lettera corrispondeva alla lettera un numero di posizioni successive o precedenti ad essa. 
 
+\paragraph{La sostituzione monoalfabetica}
+Il \textit{cifrario di Cesare} è un ottimo esempio di sostituzione monoalfabetica, ovvero un sistema che utilizza un solo alfabeta per il testo in chiaro ed una permutazione di esso per il testo cifrato.\newline
+Questo sistema ebbe un grande successo ma venne reso obsoleto dallo scienziato e teologo arabo Al-Kindi che sviluppo il un metodo chiamato \textit{analisi delle frequenze}; esso si basa sulla considerazione che, in qualsiasi lingua, le lettere si ripetono con frequenze ben definite all'interno di un testo sufficentemente lungo. Da questa considerazione è facile poter risalire al testo originale, se ad esempio si ha in un testo cifrato una lettera con maggior frequenza sappiamo che essa può essere la sostituzione della lettera 'e' oppure della lettera 'i'.
 
 Giulio Cesare
+
+Analisi delle frequenze
+
+Macchine cifranti (Alberti)
+
+Vigenère
 
 
 \clearpage
