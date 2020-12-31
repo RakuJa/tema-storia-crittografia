@@ -201,10 +201,17 @@ Durante la seconda guerra mondiale servivano macchine criptografiche capaci di g
 In germania tra il 1910 e 1920 l'ingegnere tedesco Arthur Scherbius realizzo la \textit{macchina Enigma}, una macchina elettromeccanica che ad ogni battito riceve un impulso elettrico che attraversa dei dischi cifranti (cifratura polialfabetica). A seconda della lettera premuta e della posizione del disco in quel momento viene stampata una lettera diversa, permettendo ad esempio di cifrare la lettera 'A' come 'S' alla sua prima battitura e come 'B' alla seconda.
 La controparte giapponese di Enigma era la macchina cifrante chiamata dagli americani \textit{codice Purple}, una macchina ispirata da Enigma.\newline
 Sia gli inglesi con \textit{Enigma} che gli americani con \textit{codice Purple} si avvalsero di opportune macchine in grado di ridurre i tempi di decifrazione, questa fu la prima volta che si vide un uso massiccio di macchine di decifrazione per poter decifrare messaggi cifrati effettuati da macchine cifranti.
-
 \section{Tempi moderni}
+Poco dopo la fine della seconda guerra mondiale avvenne ufficialmente il passaggio di testimone: crittografia e crittoanalisi, da appannaggio quasi esclusivo di linguisti ed appassionati di logica ed enigmistica, divennero una vera e propria scienza grazie all'ausilio della matematica.
+\subsection{Scambio di chiavi Diffie-Hellman}
+Per comunicare in segretezza, è necessario produrre, registrare e distribuire le chiavi. Di questo si occuparono Martin Hellman e Bailey Whitfield 'Whit' Diffie in un articolo pubblicato nel 1976. L'idea teorica alla base è la costruzione di due chiavi uguali senza mai dover comunicare la propria chiave, questo scopo venne raggiunto con l'utilizzo di una combinazione di algebra modulare con funzioni esponenziali.
+\subsection{L'algoritmo RSA}
+Fino all'algoritmo Diffie-Hellman il concetto principale alla base dei metodi crittografici era l'associazione di una chiave per ogni lucchetto (il lucchetto rappresenta la cifratura e decifratura), l'idea che invece permea la base dell'algoritmo RSA è la seguente: dare pubblicamente a disposizione il lucchetto per cifrare il messaggio da mandare e tenere senza mai distribuire la chiave per decifrarlo.\newline
+Nel 1977 Ronald Rivest, Adi Shamir e Leonard Adleman pubblicarono una tecnica nota come \textit{algoritmo RSA} che rende concretizza l'idea descritta in precedenza. Questa tecnica si basa sulla difficoltà di fattorizzare grandi numeri interi che rende quindi l'algoritmo \textit{materialmente inviolabile} anche se non \textit{matematicamente inviolabile}, andando dunque a soddisfare tutt'oggi i sei principi di Kerckhoffs.
+\subsection{Un nuovo orizzonte}
 
 \section{Crittografia quantistica}
+
 
 \clearpage
 
@@ -220,5 +227,4 @@ Sia gli inglesi con \textit{Enigma} che gli americani con \textit{codice Purple}
     \item Wikipedia, \textit{Crittografia}, 
     \item[] \href{https://lmo.wikipedia.org/wiki/Crittografia}{https://lmo.wikipedia.org/wiki/Crittografia}
 \end{itemize}
-
 \end{document}
