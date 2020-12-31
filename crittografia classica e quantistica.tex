@@ -219,7 +219,12 @@ rompe rsa, esistono altri algoritmi non rotti ma prima o poi anche loro cadranno
 il \textit{qubit} - bit quantistico - è l'unità fondamentale di informazione di un computer quantistico.
 Mentre l'informazione contenuta in un bit classico corrisponde soltanto all'alternativa vero/falso, nei qubit essa può corrispondere ai due stati |0⟩ e |1⟩ ed inoltre allo stato di sovrapposizione.
 \subsection{Spiegazioni varie}
-Prendiamo una semplificazione degli stati traendo spunto dall'idea della sfera di Bloch, pensiamo ad un cerchio con una freccia al suo interno, quando la freccia punterà in alto o in basso (nel caso di misurazione verticale) o destra - sinistra nel caso di misurazione orizzontale, qualsiasi altra direzione della freccia collassa la funzione d'onda ( e quindi la freccia ) in uno dei due punti elencati precedentemente a seconda del tipo di misurazione.
+Prendiamo una semplificazione degli stati traendo spunto dall'idea della sfera di Bloch, pensiamo ad un cerchio con una freccia al suo interno. La freccia all'interno del cerchio andrà a rappresentare un 1 oppure uno 0 a seconda della misurazione a cui sarà soggetta :
+\begin{itemize}
+	\item \textbf{Misurazione verticale: } con questa misurazione verrà associato alla posizione della freccia a 90° un valore ed a 270° il suo opposto.
+	\item \textbf{Misurazione orizzontale: } con questa misurazione verrà associata alla posizione della freccia a 0° un valore ed a 180° il suo opposto.
+\end{itemize} 
+Qualsiasi altra posizione diversa dalle due descritte per misurazione obbligherà la funzione d'onda a collassare su una delle due posizioni. Per esprimere il concetto in maniera più semplice: se la freccia puntasse in qualsiasi altra direzione che non sia una delle due desiderate (a seconda del tipo di misurazione) essa nel momento della osservazione sarà costretta ad andare su una delle due direzioni desiderate.
 \subsection{BB84}
 \subsection{Problemi}
 L'infrastruttura attuale di internet non permette la comunicazione quantistica.
