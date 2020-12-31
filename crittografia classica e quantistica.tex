@@ -72,25 +72,6 @@ set decimal separator={,\!},
 }
 \renewcommand{\baselinestretch}{1.05}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%PARAGRAFI
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{secnumdepth}{5} % numera i sottoparagrafi
-\setcounter{tocdepth}{5} % aggiunge all'indice i sottoparagrafi
-\newcommand{\aCapo}{ ~ \vspace{0.25cm} \\} % per andare a capo dopo paragraph e subparagraph
-\makeatletter
-\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}{-2ex\@plus -1ex}{0ex}{\normalfont\normalsize\bfseries}}
-\makeatother%{0.0001pt \@plus .2ex}{-3.25ex\@plus -1ex \@minus -.2ex}
-
-\makeatletter
-    \renewcommand\paragraph{%
-        \@startsection{paragraph}{4}{0mm}%
-           {-\baselineskip}%
-           {.5\baselineskip}%
-           {\normalfont\normalsize\bfseries}}
-    \makeatother
-
 %FANCYPAGESTYLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
@@ -167,7 +148,7 @@ set decimal separator={,\!},
 \subsection{Kryptós graphía}
 La crittografia è la branca della scienza che tratta i metodi per rendere un messaggio inintelligibile per chiunque non sia in possesso di determinati strumenti.\newline
 Lo scopo di questo elaborato è quello di esporre la storia e l'evoluzione di questa disciplina, partendo dai suoi primi usi documentati fino ad arrivare al suo presente, in continuo e costante sviluppo.
-\subsection{La legge di Kerckhoffs}
+\subsection{La legge di Kerckhoffs}\label{kerck}
 Nel 1883 il linguista olandese Auguste Kerckhoffs formalizzò in un articolo di una rivista militare delle regole alle quali deve sottostare un buon sistema crittografico. Le regole sono le seguenti:
 \begin{itemize}
 	\item Un sistema crittografico deve essere materialmente, se non matematicamente, indecifrabile.
@@ -207,49 +188,44 @@ Poco dopo la fine della seconda guerra mondiale avvenne ufficialmente il passagg
 Per comunicare in segretezza è necessario produrre, registrare e distribuire le chiavi. Di questo si occuparono Martin Hellman e Bailey Whitfield 'Whit' Diffie in un articolo pubblicato nel 1976. L'idea teorica alla base è voler fare in modo che due soggetti diversi possano costruire la stessa identica chiave senza mai comunicarla esplicitamente, questo scopo venne raggiunto con l'utilizzo di una combinazione di algebra modulare con funzioni esponenziali.
 \subsection{L'algoritmo RSA}
 Fino all'algoritmo Diffie-Hellman il concetto principale alla base dei metodi crittografici era l'associazione di una chiave per ogni lucchetto (il lucchetto rappresenta cifratura e decifrazione). L'idea che invece permea la base dell'algoritmo RSA è la seguente: mettere pubblicamente a disposizione il lucchetto per cifrare il messaggio da mandare e tenere senza mai distribuire la chiave per decifrarlo.\newline
-Nel 1977 Ronald Rivest, Adi Shamir e Leonard Adleman pubblicarono una tecnica nota come \textit{algoritmo RSA} che concretizza l'idea descritta in precedenza. Questa tecnica si basa sulla difficoltà di fattorizzare grandi numeri interi, questa proprietà rende quindi l'algoritmo \textit{materialmente inviolabile} anche se non \textit{matematicamente inviolabile}, andando dunque a soddisfare tutt'oggi i sei principi di Kerckhoffs.
+Nel 1977 Ronald Rivest, Adi Shamir e Leonard Adleman pubblicarono una tecnica nota come \textit{algoritmo RSA} che concretizza l'idea descritta in precedenza. Questa tecnica si basa sulla difficoltà di fattorizzare grandi numeri interi, questa proprietà rende quindi l'algoritmo \textit{materialmente inviolabile} anche se non \textit{matematicamente inviolabile}, andando dunque a soddisfare tutt'oggi i sei principi di Kerckhoffs (\S{} \ref{kerck}).
+Grazie a queste sue caratteristiche l'\textit{algoritmo RSA} è di ampio utilizzo nella comunicazione moderna.
 \subsection{Un nuovo orizzonte}
-Se qualcuno riuscisse a fattorizzare velocemente i numeri potrebbe rendere l'algoritmo RSA, sul quale molte comunicazioni si basano, completamente insicuro.\newline
+Se qualcuno riuscisse a fattorizzare velocemente i numeri potrebbe rendere l'algoritmo RSA completamente insicuro.\newline
 Il pericolo non è solamente teorico ma bensì completamente reale e vicino, in laboratori sparsi in tutto il mondo si sta lavorando a pieno ritmo sui computer quantistici che porterebbero a risolvere il problema della fattorizzazione dei numeri.
 \section{Crittografia quantistica}
 La crittografia quantistica consiste in un approccio alla crittografia che utilizza proprietà della meccanica quantistica. Data la complessità dell'argomento esso verrà semplificato il più possibile per permettere una più facile fruizione dell'elaborato.
 \subsection{Algoritmo di Shor}
 L'\textit{algoritmo di Shor} è un algoritmo ideato da Peter Shor nel 1994 per risolvere il problema della fattorizzazione dei numeri interi in numeri primi.
 Questo algoritmo lavora in maniera molto efficiente su computer quantistici e comprometterebbe completamente la sicurezza di algoritmi come RSA. Questa scoperta ha aumentato l'interesse verso la costruzione dei computer quantistici e contemporaneamente ha anche facilitato la ricerca su nuovi sistemi crittografici basati sui computer quantistici. Questi sistemi presero il nome di \textit{Crittografia "Post-Quantum"}, ovvero sistemi che hanno lo scopo di creare algoritmi che rimarranno sicuri dopo l'avvento e la diffusione degli elaboratori quantistici. 
-
 \subsection{Introduzione ai qubit}
-il \textit{qubit} - bit quantistico - è l'unità fondamentale di informazione di un computer quantistico.
-Mentre l'informazione contenuta in un bit classico corrisponde soltanto all'alternativa vero/falso, nei qubit essa può corrispondere ai due stati |0⟩ e |1⟩ ed inoltre allo stato di sovrapposizione.
+Il \textit{qubit} - bit quantistico - è l'unità fondamentale di informazione di un computer quantistico.
+Mentre l'informazione contenuta in un bit classico corrisponde soltanto all'alternativa vero/falso, nei \textit{qubit} essa può corrispondere ai due stati |0⟩ e |1⟩ ed inoltre allo stato di sovrapposizione.
 \subsection{Gli stati del qubit}
-Prendiamo una semplificazione degli stati traendo spunto dall'idea della \textit{sfera di Bloch}. Pensiamo ad un cerchio con una freccia al suo interno. La freccia all'interno del cerchio andrà a rappresentare un 1 oppure uno 0 a seconda della misurazione a cui sarà soggetta :
+Prendiamo una semplificazione degli stati traendo spunto dall'idea della \textit{sfera di Bloch}. Pensiamo ad un cerchio con una freccia al suo interno. La freccia all'interno del cerchio andrà a rappresentare un 1 oppure uno 0 a seconda della misurazione a cui sarà soggetta:
 \begin{itemize}
 	\item \textbf{Misurazione verticale:} con questa misurazione verrà associata alla posizione della freccia a 90° un valore ed a 270° il suo opposto.
 	\item \textbf{Misurazione orizzontale:} con questa misurazione verrà associata alla posizione della freccia a 0° un valore ed a 180° il suo opposto.
 \end{itemize} 
-Qualsiasi altra posizione diversa dalle due descritte per misurazione obbligherà la funzione d'onda a collassare su una delle due posizioni. Per esprimere il concetto in maniera più semplice: se la freccia puntasse in qualsiasi altra direzione che non sia una delle due desiderate (a seconda del tipo di misurazione) essa nel momento della osservazione sarà costretta ad andare su una delle due direzioni desiderate.
-\subsection{BB84}
+Qualsiasi altra posizione diversa dalle due descritte per misurazione, obbligherà la funzione d'onda a collassare su una delle due posizioni. Per esprimere il concetto in maniera più semplice: se la freccia puntasse in qualsiasi altra direzione che non sia una delle due desiderate (a seconda del tipo di misurazione) essa nel momento della osservazione sarà costretta ad andare su una delle due direzioni desiderate.
+\subsection{Il protocollo BB84}
 Una delle proprietà fondamentali della crittografia quantistica è l'impossibilità di intercettare un messaggio senza che le due parti in comunicazione se ne accorgano.\newline
 Il \textit{BB84} è un protocollo quantistico di distribuzione delle chiavi che utilizza a pieno questa proprietà.\newline
 Il server crea una chiave composta da bit e procede a trasformarla in un insieme di qubit scegliendo un orientamento casuale ed inviando infine il tutto all'utente.
-L'utente una volta ricevuto il messaggio andrà ad misurare indovinando casualmente l'orientamento usato dal server per i singoli qubit ed otterrà dunque una sequenza di bit. Il server e l'utente andranno a questo punto a comparare l'orientamento utilizzato per le osservazioni dei singoli qubit ed entrambi elimineranno dalla chiave tutti i bit osservati in maniera diversa tra i due.
+L'utente una volta ricevuto il messaggio andrà a misurare indovinando casualmente l'orientamento usato dal server per i singoli qubit ed otterrà dunque una sequenza di bit. Il server e l'utente andranno a questo punto a comparare l'orientamento utilizzato per le osservazioni dei singoli qubit ed entrambi elimineranno dalla chiave tutti i bit osservati in maniera diversa tra i due.
 \subsection{Le sfide da superare}
 Le sfide che questo nuovo approccio alla crittografia deve superare sono diverse ma non insormontabili:
 \begin{itemize}
 \item Il protocollo \textit{BB84} ma anche protocolli troppo complessi per essere trattati come \textit{EN94} si basano sulla trasmissione senza errori dei qubit, in una loro applicazione reale ci sarà ovviamente una perdita di dati da dover gestire.
-\item L'infrastruttura attuale di internet non permette la comunicazione quantistica, essa è possibile solamente in reti quantistiche che sono attualmente utilizzate solamente da ricercatori.
-\item Vi è ancora una forte presenza di attacchi classici che continuano a funzionare anche con l'uso di computer quantistici. Attacchi come Man in the Middle oppure Denial of Service (Negazione del servizio) continuano a essere temibili avversari, il primo per l'impossibilità di scovare un intruso una volta che esso è riuscito a fingersi una delle due parti ed il secondo perché per la proprietà su cui si basa il protocollo \textit{BB84}, ovvero l'impossibilità di origliare senza che nessuno si accorga, all'intruso basterebbe rimanere in ascolto per costringere i due a ricominciare continuamente la procedura descritta nel protocollo.
+\item L'infrastruttura attuale di internet non permette la comunicazione quantistica, essa è possibile unicamente in reti quantistiche che sono attualmente utilizzate solamente da ricercatori.
+\item Vi è ancora una forte presenza di attacchi classici che continuano a funzionare anche con l'uso di computer quantistici. Attacchi come Man in the Middle oppure Denial of Service continuano ad essere temibili avversari: il primo per l'impossibilità di scovare un intruso una volta che esso è riuscito a fingersi una delle due parti ed il secondo perché l'impossibilità di origliare senza che nessuno si accorga, permetterebbe all'intruso di far ricominciare continuamente la procedura descritta nel protocollo \textit{BB84}.
 \end{itemize}
-
-
 \clearpage
-
 \section{Fonti}
-
 {\large \textbf{Bibliografia}\par}
 \begin{itemize}
     \item Eva Filoramo, Alberto Giovannini e Claudia Pasquero, \textit{Alla scoperta della crittografia quantistica}, prima edizione settembre 2006.
 \end{itemize}
-
 {\large \textbf{Sitografia}\par}
 \begin{itemize}
     \item Wikipedia, \textit{Crittografia}, 
