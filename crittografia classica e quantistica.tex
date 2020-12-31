@@ -230,9 +230,13 @@ Una delle proprietà fondamentali della crittografia quantistica è l'impossibil
 Il BB84 è un protocollo quantistico di distribuzione delle chiavi che utilizza a pieno questa proprietà.\newline
 Il server crea una chiave composta da bit e procede a trasformarla in un insieme di qubit scegliendo un orientamento randomico ed inviando infine il tutto all'utente.
 L'utente una volta ricevuto il messaggio andrà ad misurare indovinando randomicamente l'orientamento usato dal server per i singoli qubit ed otterrà dunque una sequenza di bit. Il server e l'utente andranno a questo punto a comparare l'orientamento utilizzato per le osservazioni dei singoli qubit ed entrambi elimineranno dalla chiave tutti i bit osservati in maniera diversa tra i due.
-
-\subsection{Problemi}
-L'infrastruttura attuale di internet non permette la comunicazione quantistica.
+\subsection{Le sfide da superare}
+Le sfide che questo nuovo approccio alla crittografia deve superare sono diverse ma non insormontabili:
+\begin{itemize}
+\item Il protocollo BB84 ma anche protocolli troppo complessi per essere trattati come \textit{EN94} si basano sulla trasmissione senza errori dei qubit, in una loro applicazione reale ci sarà ovviamente una perdita di dati da dover gestire.
+\item L'infrastruttura attuale di internet non permette la comunicazione quantistica, essa è possibile solamente in reti quantistiche che sono attualmente utilizzate solamente da ricercatori.
+\item Vi è ancora una forte presenza di attacchi classici che continuano a funzionare anche con l'uso di computer quantistici. Attacchi come Man in the Middle oppure Denial of Service (Negazione del servizio) continuano a essere temibili avversari, il primo per l'impossibilità di scovare un intruso una volta che esso è riuscito a fingersi una delle due parti ed il secondo perchè per la proprietà su cui si basa il protocollo BB84, ovvero l'impossibilità di origliare senza che nessuno si accorga, all'intruso basterebbe rimanere in ascolto per costringere i due a ricominciare continuamente la procedura descritta nel protocollo.
+\end{itemize}
 
 
 \clearpage
