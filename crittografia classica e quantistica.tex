@@ -164,28 +164,38 @@ set decimal separator={,\!},
 
 \pagestyle{fancy}
 \section{La segretezza nella comunicazione}
+\subsection{kryptós graphía}
 La crittografia è la branca della scienza che tratta i metodi per rendere un messaggio inintelligibile per chiunque non sia in possesso di determinati strumenti.\newline
 Lo scopo di questo elaborato è quello di esporre la storia e l'evoluzione di questa disciplina, partendo dai suoi primi usi documentati fino ad arrivare al suo presente, in continuo e costante sviluppo.
-\subsection{Il passato della crittografia}
-\subsubsection{La trasposizione}
+\subsection{Le regole di Kerckhoffs}
+chiedi sara se elenco puntato o meno (credo meno)
+\section{Il passato della crittografia}
+\subsection{La trasposizione}
 Uno dei primi esempi storicamente attestati di cifratura fu la scitala spartana, un bastone nel quale veniva avvolto un messaggio in chiaro e la sua trasposizione sul bastone diveniva il messaggio cifrato. Per trasposizione dunque si intende un metodo di cifrature che si basa dunque sulla traslazione, secondo un determinato schema, del messaggio originario.\newline
 Molti si dilettarono nella creazione di sistemi crittografici basati su questo concetto, uno degli esempi più noti è la \textit{scacchiera di Polibio} pensato nel III secolo a.C. dalla quale il \textit{cifrario di Playfair} realizzato nel 1854 prese forte ispirazione.
-\subsubsection{La sostituzione}
+\subsection{La sostituzione}
 I cifrari a sostituzioni sono tra le tecniche crittografiche che hanno avuto più vita e successo, uno dei primi e più famosi esempi si trova verso la fine della repubblica romana con il \textit{cifrario di Cesare}, in esso ogni lettera corrispondeva alla lettera un numero di posizioni successive o precedenti ad essa. 
-\paragraph{La sostituzione monoalfabetica}
+\subsubsection{La sostituzione monoalfabetica}
 Il \textit{cifrario di Cesare} è un ottimo esempio di sostituzione monoalfabetica, ovvero un sistema che utilizza un solo alfabeta per il testo in chiaro ed una permutazione di esso per il testo cifrato.\newline
 Questo sistema ebbe un grande successo ma venne reso obsoleto dallo scienziato e teologo arabo Al-Kindi che sviluppo il un metodo chiamato \textit{analisi delle frequenze}; esso si basa sulla considerazione che, in qualsiasi lingua, le lettere si ripetono con frequenze ben definite all'interno di un testo sufficentemente lungo. Da questa considerazione è facile poter risalire al testo originale, se ad esempio si ha in un testo cifrato una lettera con maggior frequenza sappiamo che essa può essere la sostituzione della lettera 'e' oppure della lettera 'i'.
-\subsection{L'inizio della crittografia moderna}
-\paragraph{La sostituzione polialfabetica}
+\section{L'inizio della crittografia moderna}
+\subsection{La sostituzione polialfabetica}
 Tra il 1460 ed il 1470 Leon Battista Alberti scrisse un \textit{Trattato della cifra}, un testo da lui non divulgato per mantenere la segretezza delle nozioni da lui scritte. In questo trattato spicca il geniale \textit{disco cifrante} da lui inventato, questa macchina fu rivaleggiata solamente quattro secoli dopo da Thomas Jefferson con il suo \textit{cilindro di Jefferson}.
 Queste macchine erano entrambe esempi di sostituzione polialfabetica, ovvero una sostituzione nella quale si fa uso di molteplici alfabeti per sostituire le lettere del messaggio, utilizzando un determinato ordine che costituisce la chiave.
-
-\paragraph{Il cifrario di Vigenère}
+\subsection{Il cifrario di Vigenère}
 Il \textit{cifrario di Vigenère} si può considerare una generalizzazione del \textit{cifrario di Cesare}, invece di spostare dello stesso numero la lettera da cifrare, questa viene spostata di un numero di posti variabile ma ripetuto. Per portare un esempio di facile comprensione mentre con il primo cifrario con chiave 3 il testo 'SPQR' diventa 'VSTU' con il secondo con chiave BD la prima lettera viene spostata di una posizione, la seconda di tre e così ripetuto fino a fine testo da cifrare, portando 'SPQR' a diventare 'TSRU'.
-\paragraph{Un sistema di cifratura perfetto}
+\subsection{Un sistema di cifratura perfetto}
 In realtà anche il cifrario di Vigenère può essere sconfitto da una più profonda ed attenta analisi delle frequenze, questo per due grandi difetti della cifratura in questione: la ripetizione della chiave per tutta la lunghezza del testo e l'uso della stessa chiave per più testi.\newline
-Rimediando a questi difetti nasce il \textit{cifrario di Vernam}, l'unico sistema crittografico la cui sicurezza è comprovata da una dimostrazione matematica. Questo sistema risulta tanto sicuro quanto scomodo nell'utilizzo per comunicazioni quotidiane, le difficolta insite nella distribuzione delle chiavi lo confina ad un utilizzo saltuario, riservato per messaggi estremamente importanti.
+Rimediando a questi difetti nasce il \textit{blocco monouso} inventato nel 1917-18 contemporaneamente da Gilbert Vernam e Joseph Mauborgne (il quale pose la condizione sulla casualità della generazione della chiave), l'unico sistema crittografico la cui sicurezza è comprovata da una dimostrazione matematica. Questo sistema risulta tanto sicuro quanto scomodo nell'utilizzo per comunicazioni quotidiane, le difficolta insite nella distribuzione delle chiavi lo confina ad un utilizzo saltuario, riservato per messaggi estremamente importanti.
+\subsection{Enigma e codice Purple}
+Durante la seconda guerra mondiale servivano macchine criptografiche capaci di garantire una forte sicurezza ed anche rapidità nella trasmissione dei messaggi, da queste esigenze nascono le due macchine cifranti con cui gli alleati si confrontarono durante la seconda guerra mondiale: Enigma e codice Purple.
+In germania tra il 1910 e 1920 l'ingegnere tedesco Arthur Scherbius realizzo la \textit{macchina Enigma}, una macchina elettromeccanica che ad ogni battito riceve un impulso elettrico che attraversa dei dischi cifranti (cifratura polialfabetica). A seconda della lettera premuta e della posizione del disco in quel momento viene stampata una lettera diversa, permettendo ad esempio di cifrare la lettera 'A' come 'S' alla sua prima battitura e come 'B' alla seconda.
+La controparte giapponese di Enigma era la macchina cifrante chiamata dagli americani \textit{codice Purple}, una macchina ispirata da Enigma.\newline
+Sia gli inglesi con \textit{Enigma} che gli americani con \textit{codice Purple} si avvalsero di opportune macchine in grado di ridurre i tempi di decifrazione, questa fu la prima volta che si vide un uso massiccio di macchine di decifrazione per poter decifrare messaggi cifrati effettuati da macchine cifranti.
 
+\section{Tempi moderni}
+
+\section{Crittografia quantistica}
 
 \clearpage
 
