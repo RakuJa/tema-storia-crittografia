@@ -214,7 +214,9 @@ Il pericolo non è solamente teorico ma bensì completamente reale e vicino, in 
 \section{Crittografia quantistica}
 La crittografia quantistica consiste in un approccio alla crittografia che utilizza proprietà della meccanica quantistica. Data la complessità dell'argomento esso verrà semplificato il più possibile per permettere una più facile fruizione dell'elaborato.
 \subsection{Algoritmo di Shor}
-rompe rsa, esistono altri algoritmi non rotti ma prima o poi anche loro cadranno prob
+L'\textit{algoritmo di Shor} è un algoritmo ideato da Peter Shor nel 1994 per risolvere il problema della fattorizzazione dei numeri interi in numeri primi.
+Questo algoritmo lavora in maniera molto efficente su computer quantistici e comprometterebbe completamente la sicurezza di algoritmi come RSA se fosse utilizzato su computer quantistici potenti. Questa scoperta ha aumentato l'interesse verso la costruzione dei computer quantistici e contemporaneamente ha anche facilitato la ricerca su nuovi sistemi crittografici basati sui computer quantistici. Questo sistemi presero il nome di \textit{Crittografia "Post-Quantum"}, ovvero sistemi che hanno lo scopo di creare algoritmi che rimarrano sicuri dopo l'avvento e diffusione degli elaboratori quantistici. 
+
 \subsection{Introduzione ai qubit}
 il \textit{qubit} - bit quantistico - è l'unità fondamentale di informazione di un computer quantistico.
 Mentre l'informazione contenuta in un bit classico corrisponde soltanto all'alternativa vero/falso, nei qubit essa può corrispondere ai due stati |0⟩ e |1⟩ ed inoltre allo stato di sovrapposizione.
@@ -227,15 +229,15 @@ Prendiamo una semplificazione degli stati traendo spunto dall'idea della \textit
 Qualsiasi altra posizione diversa dalle due descritte per misurazione obbligherà la funzione d'onda a collassare su una delle due posizioni. Per esprimere il concetto in maniera più semplice: se la freccia puntasse in qualsiasi altra direzione che non sia una delle due desiderate (a seconda del tipo di misurazione) essa nel momento della osservazione sarà costretta ad andare su una delle due direzioni desiderate.
 \subsection{BB84}
 Una delle proprietà fondamentali della crittografia quantistica è l'impossibilità di intercettare un messaggio senza che le due parti in comunicazione se ne accorgano.\newline
-Il BB84 è un protocollo quantistico di distribuzione delle chiavi che utilizza a pieno questa proprietà.\newline
+Il \textit{BB84} è un protocollo quantistico di distribuzione delle chiavi che utilizza a pieno questa proprietà.\newline
 Il server crea una chiave composta da bit e procede a trasformarla in un insieme di qubit scegliendo un orientamento randomico ed inviando infine il tutto all'utente.
 L'utente una volta ricevuto il messaggio andrà ad misurare indovinando randomicamente l'orientamento usato dal server per i singoli qubit ed otterrà dunque una sequenza di bit. Il server e l'utente andranno a questo punto a comparare l'orientamento utilizzato per le osservazioni dei singoli qubit ed entrambi elimineranno dalla chiave tutti i bit osservati in maniera diversa tra i due.
 \subsection{Le sfide da superare}
 Le sfide che questo nuovo approccio alla crittografia deve superare sono diverse ma non insormontabili:
 \begin{itemize}
-\item Il protocollo BB84 ma anche protocolli troppo complessi per essere trattati come \textit{EN94} si basano sulla trasmissione senza errori dei qubit, in una loro applicazione reale ci sarà ovviamente una perdita di dati da dover gestire.
+\item Il protocollo \textit{BB84} ma anche protocolli troppo complessi per essere trattati come \textit{EN94} si basano sulla trasmissione senza errori dei qubit, in una loro applicazione reale ci sarà ovviamente una perdita di dati da dover gestire.
 \item L'infrastruttura attuale di internet non permette la comunicazione quantistica, essa è possibile solamente in reti quantistiche che sono attualmente utilizzate solamente da ricercatori.
-\item Vi è ancora una forte presenza di attacchi classici che continuano a funzionare anche con l'uso di computer quantistici. Attacchi come Man in the Middle oppure Denial of Service (Negazione del servizio) continuano a essere temibili avversari, il primo per l'impossibilità di scovare un intruso una volta che esso è riuscito a fingersi una delle due parti ed il secondo perchè per la proprietà su cui si basa il protocollo BB84, ovvero l'impossibilità di origliare senza che nessuno si accorga, all'intruso basterebbe rimanere in ascolto per costringere i due a ricominciare continuamente la procedura descritta nel protocollo.
+\item Vi è ancora una forte presenza di attacchi classici che continuano a funzionare anche con l'uso di computer quantistici. Attacchi come Man in the Middle oppure Denial of Service (Negazione del servizio) continuano a essere temibili avversari, il primo per l'impossibilità di scovare un intruso una volta che esso è riuscito a fingersi una delle due parti ed il secondo perchè per la proprietà su cui si basa il protocollo \textit{BB84}, ovvero l'impossibilità di origliare senza che nessuno si accorga, all'intruso basterebbe rimanere in ascolto per costringere i due a ricominciare continuamente la procedura descritta nel protocollo.
 \end{itemize}
 
 
